@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'zj+g_upjks%tyr)=k+usy-bx*^mshif*hcr^2+^_gxxfb84g2j'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['stackoverflowplus.herokuapp.com']
+ALLOWED_HOSTS = ['stackoverflowplus.herokuapp.com','*']
 
 
 # Application definition
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'API.apps.ApiConfig',
+    'stackoverflowplus.apps.StackoverflowplusConfig',
     'rest_framework'
 ]
 
@@ -121,6 +122,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+   
+]
+STATIC_ROOT = os.path.join(BASE_DIR, "live-static-files", "static-root")
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
