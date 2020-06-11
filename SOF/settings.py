@@ -25,7 +25,7 @@ SECRET_KEY = 'zj+g_upjks%tyr)=k+usy-bx*^mshif*hcr^2+^_gxxfb84g2j'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['stackoverflowplus.herokuapp.com','*']
+ALLOWED_HOSTS = ['stackoverflowplus.herokuapp.com']
 
 
 # Application definition
