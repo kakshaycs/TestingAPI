@@ -1,8 +1,8 @@
 from django.shortcuts import render
 
 from rest_framework import viewsets
-from .models import User, Question, Answer, Reply
-from .Serializers import UserSerializer, QuestionSerializer,AnswerSerializer, ReplySerializer
+from .models import User, Question, Answer, Reply, Tag
+from .Serializers import UserSerializer,TagSerializer, QuestionSerializer,AnswerSerializer, ReplySerializer
 
 class UserView(viewsets.ModelViewSet):
 	queryset = User.objects.all()
@@ -20,7 +20,9 @@ class ReplyView(viewsets.ModelViewSet):
 	queryset = Reply.objects.all()
 	serializer_class = ReplySerializer
 
-
+class TagView(viewsets.ModelViewSet):
+	queryset = Tag.objects.all()
+	serializer_class = TagSerializer
 
 
 

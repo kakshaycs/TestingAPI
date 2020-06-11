@@ -29,7 +29,7 @@ class Question(models.Model):
 class Answer(models.Model):
 	"""docstring for Answers"""
 	auther = models.ForeignKey(User,on_delete=models.CASCADE)
-	question_id = models.ForeignKey(Question,on_delete=models.CASCADE)
+	question = models.ForeignKey(Question,on_delete=models.CASCADE)
 	answer_text = models.TextField()
 	upVotes = models.IntegerField(default=0)
 	downVotes = models.IntegerField(default=0)
@@ -40,7 +40,7 @@ class Answer(models.Model):
 		return self.answer_text[:100]
 
 class Reply(models.Model):
-	answer_id = models.ForeignKey(Answer,on_delete=models.CASCADE)
+	answer = models.ForeignKey(Answer,on_delete=models.CASCADE)
 	comment = models.TextField()
 	date = models.DateTimeField(default=datetime.now, blank=True)
 
@@ -49,7 +49,7 @@ class Reply(models.Model):
 		
 
 class Tag(models.Model):
-	question_id = models.ForeignKey(Question,on_delete=models.CASCADE)
+	question = models.ForeignKey(Question,on_delete=models.CASCADE)
 	tag = models.CharField(max_length=50)
 
 	def __str__(self):
