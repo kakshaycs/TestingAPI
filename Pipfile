@@ -9,6 +9,7 @@ verify_ssl = true
 django = "*"
 djangorestframework = "*"
 gunicorn = "==19.9.0"
+whitenoise = "==3.3.1"
 
 [requires]
 python_version = "3.8.2"
