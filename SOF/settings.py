@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'zj+g_upjks%tyr)=k+usy-bx*^mshif*hcr^2+^_gxxfb84g2j'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['stackoverflowplus.herokuapp.com']
 
 
 # Application definition
