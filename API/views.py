@@ -4,6 +4,13 @@ from rest_framework import viewsets
 from .models import User, Question, Answer, Reply, Tag
 from .Serializers import UserSerializer,TagSerializer, QuestionSerializer,AnswerSerializer, ReplySerializer
 
+
+def homeView(request):
+	data = Question.objects.all()
+	return render(request,'API/home.html',{})
+
+
+
 class UserView(viewsets.ModelViewSet):
 	queryset = User.objects.all()
 	serializer_class = UserSerializer
